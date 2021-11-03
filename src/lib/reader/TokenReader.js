@@ -8,6 +8,10 @@ module.exports = class TokenReader {
     return this.tokens[0];
   }
 
+  eof() {
+    return this.tokens.length === 0;
+  }
+
   read() {
     if (this.peek() === '\n') {
       this.line++;

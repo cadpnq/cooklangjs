@@ -69,6 +69,17 @@ describe('TokenReader', function () {
     });
   });
 
+  describe('#eof()', function () {
+    it('should return true if the reader is at the end of the stream', function () {
+      const reader = new TokenReader('foo bar');
+      reader.read();
+      expect(reader.eof()).to.be.false;
+      reader.read();
+      reader.read();
+      expect(reader.eof()).to.be.true;
+    });
+  });
+
   describe('#read()', function () {
     it('should return the next token', function () {
       const reader = new TokenReader('foo bar');
