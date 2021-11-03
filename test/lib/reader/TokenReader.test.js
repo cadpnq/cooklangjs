@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const TokenReader = require('../../src/lib/TokenReader');
+const TokenReader = require('../../../src/lib/reader/TokenReader');
 
 describe('TokenReader', function () {
   describe('#constructor()', function () {
