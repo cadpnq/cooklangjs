@@ -1,6 +1,6 @@
 module.exports = class TokenReader {
-  constructor(input) {
-    this.tokens = input.match(/[\/:@\{\}%~#\n]|\w+|./gm);
+  constructor(input = '', regex) {
+    this.tokens = input.match(regex);
     this.line = 1;
   }
 
