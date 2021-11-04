@@ -56,6 +56,14 @@ describe('TokenReader', function () {
     });
   });
 
+  describe('#readUntil()', function () {
+    it('should read tokens until the given token is found', function () {
+      const reader = new TokenReader('foo bar biz buz', testRegex);
+      expect(reader.readUntil('biz')).to.equal('foo bar ');
+      expect(reader.peek()).to.equal('biz');
+    });
+  });
+
   describe('#unread()', function () {
     it('should unread the last token', function () {
       const reader = new TokenReader('foo bar', testRegex);

@@ -19,6 +19,14 @@ module.exports = class TokenReader {
     return this.tokens.shift();
   }
 
+  readUntil(token) {
+    let result = '';
+    while (!this.eof() && this.peek() !== token) {
+      result += this.read();
+    }
+    return result;
+  }
+
   unread(token) {
     this.tokens.unshift(token);
   }
