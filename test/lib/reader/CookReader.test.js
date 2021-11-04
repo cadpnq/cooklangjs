@@ -8,7 +8,7 @@ describe('CookReader', function () {
       expect(cookReader).to.be.an.instanceof(CookReader);
     });
 
-    it('should properly the input', function () {
+    it('should properly tokenize the input', function () {
       const reader = new CookReader(
         'foo #bar @biz{} ~buz // baz\n@boz bez{1/2%byz} @foo{1.1%bar}'
       );
